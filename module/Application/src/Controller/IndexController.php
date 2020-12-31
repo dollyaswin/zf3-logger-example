@@ -9,11 +9,22 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Psr\Log\LoggerAwareTrait;
 
 class IndexController extends AbstractActionController
 {
+    use LoggerAwareTrait;
+    
     public function indexAction()
     {
+        $this->logger->log(
+            \Psr\Log\LogLevel::INFO,
+            '{class}::{function} Logger set up',
+            [
+                'class'    => __CLASS__,
+                'function' => __FUNCTION__,
+            ]
+        );
         return new ViewModel();
     }
 }
