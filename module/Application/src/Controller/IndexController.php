@@ -19,10 +19,13 @@ class IndexController extends AbstractActionController
     {
         $this->logger->log(
             \Psr\Log\LogLevel::INFO,
-            '{class}::{function} Logger set up',
+            '{class} {function} {user_id} {user_type} {page} Logger set up',
             [
                 'class'    => __CLASS__,
                 'function' => __FUNCTION__,
+                'user_id'  => 10,
+                'user_type'  => 'Admin',
+                'page' => 0
             ]
         );
         return new ViewModel();

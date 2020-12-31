@@ -29,10 +29,17 @@ class Module
                         'priority'  => 'priority',
                         'timestamp' => 'timestamp',
                         'message'   => 'message',
+                        'extra' => [
+                            'function'  => 'function',
+                            'user_id'   => 'user_id',
+                            'user_type' => 'user_type',
+                            'page' => 'page'
+                        ]
                     ];
                     $writerDb = new Writer\Db($dbAdapter, 'log', $mapping);
                     $logger   = new Logger();
                     $logger->addWriter($writerDb, 1);
+                    Logger::registerErrorHandler($logger);
                     return $logger;
                 }
             ]
