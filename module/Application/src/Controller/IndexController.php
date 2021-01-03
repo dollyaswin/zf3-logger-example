@@ -17,9 +17,10 @@ class IndexController extends AbstractActionController
     
     public function indexAction()
     {
+//         throw new \RuntimeException('test');
         $this->logger->log(
             \Psr\Log\LogLevel::INFO,
-            '{class} {function} {user_id} {user_type} {page} Logger set up',
+            'Logger set up',
             [
                 'class'    => __CLASS__,
                 'function' => __FUNCTION__,
