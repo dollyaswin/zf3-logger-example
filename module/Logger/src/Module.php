@@ -23,7 +23,7 @@ class Module
         return [
             'factories' => [
                 'logger_default' => function ($container) {
-                    $dbAdapter = $container->get(AdapterInterface::class);
+                    $dbAdapter = $container->get('logger_db');
                     $mapping = [
                         'priorityName'  => 'priority_name',
                         'priority'  => 'priority',

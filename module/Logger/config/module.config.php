@@ -7,6 +7,9 @@ return [
             'logger_default' => [
                 \Logger\Service\PsrLoggerDelegator::class
             ],
+        ],
+        'abstract_factories' => [
+            'Zend\Db\Adapter\AdapterAbstractServiceFactory',
         ]
     ],
 ];
